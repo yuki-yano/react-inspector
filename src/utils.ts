@@ -25,7 +25,7 @@ export const getDevtoolsGlobalHookRenderer = () => {
 };
 
 export const getVsCodeLink = (sourceCode: DebugSource) =>
-  `vscode://file${sourceCode.fileName}:${sourceCode.lineNumber}:${sourceCode.columnNumber}`;
+  `http://localhost:11111/file/${sourceCode.fileName}:${sourceCode.lineNumber}:${sourceCode.columnNumber}?command=split`;
 
 export const findFiberByHostInstance = (
   target: HTMLElement

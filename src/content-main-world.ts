@@ -71,7 +71,9 @@ const handleInspectorClick = (e: MouseEvent) => {
   document.getElementById(tmpId)?.removeAttribute("id");
   target.id = tmpId;
   window.postMessage("inspected", "*");
-  window.open(getVsCodeLink(fiber._debugSource));
+  fetch(getVsCodeLink(fiber._debugSource)).then((res) => {
+    console.log(res);
+  })
 };
 
 window.addEventListener("message", ({ data }: { data: string }) => {
